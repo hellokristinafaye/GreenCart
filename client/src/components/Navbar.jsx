@@ -41,7 +41,11 @@ const Navbar = () => {
                 :
                 (
                     <div className="">
-                         <img src={assets.profile_icon} alt="" className="w-10" />   
+                        <img src={assets.profile_icon} alt="" className="w-10" />
+                        <ul className="">
+                            <li className="">My Orders</li>
+                            <li className="">Logout</li>
+                        </ul>    
                     </div>
                 )
                 
