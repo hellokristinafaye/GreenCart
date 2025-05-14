@@ -51,7 +51,9 @@ const Navbar = () => {
                 <NavLink to="/" onClick={() => setOpen(false)}>Contact</NavLink>
                 
                 {!user ? (
-                    <button className="cursor-pointer px-6 py-2 mt-2 bg-primary hover:bg-primary-dull transtion text-white rounded-full text-sm">
+                    <button onClick={() => {
+                        setOpen(false)
+                    }} className="cursor-pointer px-6 py-2 mt-2 bg-primary hover:bg-primary-dull transtion text-white rounded-full text-sm">
                     Login
                     </button>
                 ) : (
