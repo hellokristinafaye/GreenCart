@@ -21,7 +21,8 @@ const MainBanner = () => {
                   Explore Deals
                   <img className="transition group-hover:translate-x-1" src={assets.black_arrow_icon} alt="arrow"  />
               </Link>
-            </div>
+              </div>
+              {/* final touch on banner */}
         </div> 
     </div>
   )
