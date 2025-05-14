@@ -5,9 +5,12 @@ import { useAppContext } from '../context/AppContext'
 
 const Navbar = () => {
     const [open, setOpen] = React.useState(false)
-    const { user, setUser, setShowUserLogin } = useAppContext();
-
-
+    const { user, setUser, setShowUserLogin, navigate } = useAppContext();
+// for Logout
+    const logout = async () => {
+        setUser(null);
+        navigate('/');
+    }
 
     return (
       <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
@@ -59,7 +62,7 @@ const Navbar = () => {
                     Login
                     </button>
                 ) : (
-                    <button className="cursor-pointer px-6 py-2 mt-2 bg-primary hover:bg-primary-dull transtion text-white rounded-full text-sm">
+                    <button onClick={logout} className="cursor-pointer px-6 py-2 mt-2 bg-primary hover:bg-primary-dull transtion text-white rounded-full text-sm">
                     Logout
                     </button>
                 )}
