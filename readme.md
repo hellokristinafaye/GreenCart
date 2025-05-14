@@ -9,6 +9,8 @@ Technologies Used:
   - Express
   - React
   - Node.js
+- Tailwind CSS
+- Vite
 
 Features:
 
