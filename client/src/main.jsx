@@ -7,8 +7,11 @@ import { AppContextProvider } from './context/AppContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <AppContextProvider>
+    {/* <AppContextProvider> */}
      <App />
-    </AppContextProvider>
+    {/* </AppContextProvider> */}
   </BrowserRouter>,
+  // <StrictMode>
+  //     <App />
+  //   </StrictMode>
 )
