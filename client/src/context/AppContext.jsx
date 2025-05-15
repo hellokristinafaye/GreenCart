@@ -6,6 +6,9 @@ export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
 
+    const currency = import.meta.VITE_CURRENCY; 
+    // VITE_CURRENCY declared in .env file
+
     const navigate = useNavigate();
     const [user, setUser] = useState(null)
     const [isSeller, setIsSeller] = useState(false)
@@ -21,7 +24,7 @@ export const AppContextProvider = ({ children }) => {
     },[])
 
     const value = {
-        navigate, user, setUser, setIsSeller, isSeller, showUserLogin, setShowUserLogin, products
+        navigate, user, setUser, setIsSeller, isSeller, showUserLogin, setShowUserLogin, products, currency
     };
     
     return <AppContext.Provider value={value}>
