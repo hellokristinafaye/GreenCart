@@ -19,7 +19,7 @@ const ProductCard = ({product}) => {
                          <img key={i} src={i < 4 ? assets.star_icon : assets.star_dull_icon} alt="star" className="md:w-3.5 w3" />
                         
                     ))}
-                    <p>({product.rating})</p>
+                    <p>(4)</p>
                 </div>
                 <div className="flex items-end justify-between mt-3">
                     <p className="md:text-xl text-base font-medium text-indigo-500">
