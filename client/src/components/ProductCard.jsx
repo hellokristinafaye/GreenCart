@@ -1,10 +1,11 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import { useAppContext } from "../context/AppContext";
 
 
 const ProductCard = ({product}) => {
     const [count, setCount] = React.useState(0);
-
+    const { currency } = useAppContext();
 
     return (
         <div className="border border-gray-500/20 rounded-md md:px-4 px-3 py-2 bg-white min-w-56 max-w-56 w-full">
@@ -23,7 +24,7 @@ const ProductCard = ({product}) => {
                 </div>
                 <div className="flex items-end justify-between mt-3">
                     <p className="md:text-xl text-base font-medium text-indigo-500">
-                        ${product.offerPrice} <span className="text-gray-500/60 md:text-sm text-xs line-through">${product.price}</span>
+                        {currency}${product.offerPrice}{" "} <span className="text-gray-500/60 md:text-sm text-xs line-through">{currency}${product.price}</span>
                     </p>
                     <div className="text-indigo-500">
                         {count === 0 ? (
