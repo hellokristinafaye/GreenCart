@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
 import { useParams } from "react-router-dom";
 
@@ -7,7 +7,17 @@ const ProductDetails = () => {
     const { products, navigate, currency, addToCart } = useAppContext();
     const { id } = useParams();
 
-    const [thumbnail, setThumbnail] = useState(product.images[0]);
+    const [relatedProducts, setRelatedProducts] = useState(product.images[0]);
+    const [thumbnail, setThumbnail] = useState(null);
+    // finds product by id
+    const product = products.find((item) => item._id === id);
+
+    useEffect(() => {
+        if (products.length > 0) {
+            let productsCopy = products.slice();
+            productsCopy = productsCopy.filter((item)=> product.category === item.category)
+        }
+    },[products])
 
     return product && (
         <div className="max-w-6xl w-full px-6">
