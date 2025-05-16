@@ -28,10 +28,10 @@ const ProductDetails = () => {
     return product && (
         <div className="mt-12">
             <p>
-                <Link>Home</Link> /
-                <span> Products</span> /
-                <span> {product.category}</span> /
-                <span className="text-indigo-500"> {product.name}</span>
+                <Link to={"/"} >Home</Link> 
+                <Link to={"/products"} >Products</Link> 
+                <Link to={`/products/${product.category.toLowerCase()}`}> {product.category}</Link> /
+                <sd className="text-indigo-500"> {product.name}</span>
             </p>
 
             <div className="flex flex-col md:flex-row gap-16 mt-4">
