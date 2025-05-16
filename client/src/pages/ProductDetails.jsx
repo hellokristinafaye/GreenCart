@@ -55,9 +55,9 @@ const ProductDetails = () => {
 
                     <div className="flex items-center gap-0.5 mt-1">
                         {Array(5).fill('').map((_, i) => (
-                                <img src={i<4 ? assets.star_icon : assets.star_dull_icon} alt="" className="" />
+                                <img src={i<4 ? assets.star_icon : assets.star_dull_icon} alt="" className="md:w-4 w-3.5" />
                         ))}
-                        <p className="text-base ml-2">({product.rating})</p>
+                        <p className="text-base ml-2">(4)</p>
                     </div>
 
                     <div className="mt-6">
