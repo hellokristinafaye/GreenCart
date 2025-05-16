@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const ProductDetails = () => {
 
     const product = {
@@ -19,7 +21,7 @@ const ProductDetails = () => {
         ]
     };
 
-    const [thumbnail, setThumbnail] = React.useState(product.images[0]);
+    const [thumbnail, setThumbnail] = useState(product.images[0]);
 
     return product && (
         <div className="max-w-6xl w-full px-6">
