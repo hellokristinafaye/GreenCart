@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useAppContext } from '../context/AppContext'
+import ProductCard from '../components/ProductCard';
 
 const AllProducts = () => {
 
     const { products, searchQuery } = useAppContext();
     const [filteredProducts, setFilteredProducts] = useState([]);
-
+// this is how we display only the in-stock/searched for items
     useEffect(() => {
         if (searchQuery.length > 0) {
             setFilteredProducts(products.filter(
@@ -24,7 +25,9 @@ const AllProducts = () => {
           </div>
           
         <div className="">
-
+              {filteredProducts.filter((product) => product.inStock).map((product, index) => (
+                <ProductCard key={index} product={product} />
+            ))}
         </div>
 
     </div>
