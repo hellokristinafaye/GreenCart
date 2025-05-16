@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ProductDetails = () => {
 
@@ -28,7 +28,7 @@ const ProductDetails = () => {
     return product && (
         <div className="mt-12">
             <p>
-                <span>Home</span> /
+                <Link>Home</Link> /
                 <span> Products</span> /
                 <span> {product.category}</span> /
                 <span className="text-indigo-500"> {product.name}</span>
