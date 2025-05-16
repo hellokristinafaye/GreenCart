@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useAppContext } from "../context/AppContext";
+import { useParams } from "react-router-dom";
 
 const ProductDetails = () => {
 
-    const { products, navigate, currency, addToCart } = useAppContext()
+    const { products, navigate, currency, addToCart } = useAppContext();
+    const { id } = useParams();
 
     const [thumbnail, setThumbnail] = useState(product.images[0]);
 
