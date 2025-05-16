@@ -3,8 +3,10 @@ import { useAppContext } from '../context/AppContext'
 
 const AllProducts = () => {
 
-    const { products } = useAppContext();
+    const { products, searchQuery } = useAppContext();
     const [filteredProducts, setFilteredProducts] = useState([]);
+
+    
 
   return (
     <div className="mt-16 flex flex-col">
