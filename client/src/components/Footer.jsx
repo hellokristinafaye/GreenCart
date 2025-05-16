@@ -1,7 +1,6 @@
 import { assets, footerLinks } from "../assets/assets";
 
 const Footer = () => {
-    
 
     return (
         <div className="px-6 md:px-16 lg:px-24 xl:px-32 mt-24 bg-primary/10">
@@ -17,7 +16,7 @@ const Footer = () => {
                             <ul className="text-sm space-y-1">
                                 {section.links.map((link, i) => (
                                     <li key={i}>
-                                        <a href="#" className="hover:underline transition">{link}</a>
+                                        <a href={link.url} className="hover:underline transition">{link.text}</a>
                                     </li>
                                 ))}
                             </ul>
