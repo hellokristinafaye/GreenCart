@@ -96,7 +96,7 @@ const ProductDetails = () => {
                             <ProductCard key={index} product={product} />
                         ))}
                 </div> 
-                <button className="mx-auto cursor-pointer px-12 my-16 py-2.5 border rounded text-primary hover:bg-primary/10 transition">See More</button>
+                <button onClick={()=>{navigate('/products'); scrollTo(0,0)}} className="mx-auto cursor-pointer px-12 my-16 py-2.5 border rounded text-primary hover:bg-primary/10 transition">See More</button>
         </div>
             
         </div>
