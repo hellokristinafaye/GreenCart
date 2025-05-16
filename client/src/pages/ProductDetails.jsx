@@ -96,6 +96,7 @@ const ProductDetails = () => {
                             <ProductCard key={index} product={product} />
                         ))}
                 </div> 
+                <button className="">See More</button>
         </div>
             
         </div>
