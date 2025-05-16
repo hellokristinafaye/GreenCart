@@ -15,12 +15,18 @@ const ProductDetails = () => {
     useEffect(() => {
         if (products.length > 0) {
             let productsCopy = products.slice();
-            productsCopy = productsCopy.filter((item)=> product.category === item.category)
+            productsCopy = productsCopy.filter((item) => product.category === item.category)
+            setRelatedProducts(productsCopy.slice(0, 5));
         }
-    },[products])
+    }, [products])
+    
+    useEffect(() => {
+        // conditionally renders thumbnail
+        setThumbnail(product?.image[0] ? product.image[0] : null)
+    }, [product])
 
     return product && (
-        <div className="max-w-6xl w-full px-6">
+        <div className="mt-12">
             <p>
                 <span>Home</span> /
                 <span> Products</span> /
