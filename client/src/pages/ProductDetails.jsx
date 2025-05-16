@@ -30,8 +30,8 @@ const ProductDetails = () => {
             <p>
                 <Link to={"/"} >Home</Link> 
                 <Link to={"/products"} >Products</Link> 
-                <Link to={`/products/${product.category.toLowerCase()}`}> {product.category}</Link> /
-                <sd className="text-indigo-500"> {product.name}</span>
+                <Link to={`/products/${product.category.toLowerCase()}`}> {product.category}</Link> 
+                <span className="text-indigo-500"> {product.name}</span>
             </p>
 
             <div className="flex flex-col md:flex-row gap-16 mt-4">
