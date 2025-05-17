@@ -21,6 +21,11 @@ const Cart = () => {
         setCartArray(tempArray);
     }
 
+    const placeOrder = async () => {
+        alert("Free 99!")
+        // logic to be written when we do the backend.
+    }
+
     useEffect(() => {
         if (products.length > 0 && cartItems) {
             getCart()
@@ -132,7 +137,7 @@ const Cart = () => {
                     </p>
                 </div>
 {/* Place Order button */}
-                <button onClick={} className="w-full py-3 mt-6 cursor-pointer bg-indigo-500 text-white font-medium hover:bg-indigo-600 transition">
+                <button onClick={placeOrder} className="w-full py-3 mt-6 cursor-pointer bg-indigo-500 text-white font-medium hover:bg-indigo-600 transition">
                     {paymentOption === "COD" ? "Place Order" : "Process to Checkout"}
                 </button>
             </div>
