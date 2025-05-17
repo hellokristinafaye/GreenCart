@@ -52,7 +52,7 @@ const Cart = () => {
                             <div>
                                 <p className="hidden md:block font-semibold">{product.name}</p>
                                 <div className="font-normal text-gray-500/70">
-                                    <p>Size: <span>{product.size || "N/A"}</span></p>
+                                    <p>Weight: <span>{product.weight || "N/A"}</span></p>
                                     <div className='flex items-center'>
                                         <p>Qty:</p>
                                         <select className='outline-none'>
