@@ -66,7 +66,7 @@ const Cart = () => {
                         </div>
                         <p className="text-center">{currency}${product.offerPrice * product.quantity}</p>
                         <button className="cursor-pointer mx-auto">
-                            <img src={assets.remove_icon} alt="remove" className="" />
+                            <img src={assets.remove_icon} alt="remove" className="inline-block w-6 h-6" />
                         </button>
                     </div>)
                 )}
