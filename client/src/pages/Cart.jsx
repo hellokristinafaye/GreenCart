@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
-import { dummyAddress } from "../assets/assets";
+import { assets, dummyAddress } from "../assets/assets";
 
 const Cart = () => {
     const { products, currency, cartItems, removeFromCart, getCartCount, updateCartItems, navigate, getCartAmount } = useAppContext();
@@ -66,9 +66,7 @@ const Cart = () => {
                         </div>
                         <p className="text-center">{currency}${product.offerPrice * product.quantity}</p>
                         <button className="cursor-pointer mx-auto">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="m12.5 7.5-5 5m0-5 5 5m5.833-2.5a8.333 8.333 0 1 1-16.667 0 8.333 8.333 0 0 1 16.667 0" stroke="#FF532E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
+                            <img src={assets.remove_icon} alt="remove" className="" />
                         </button>
                     </div>)
                 )}
