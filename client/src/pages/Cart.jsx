@@ -131,9 +131,9 @@ const Cart = () => {
                             {currency}{getCartAmount() + getCartAmount() * .2 / 100}</span>
                     </p>
                 </div>
-
-                <button className="w-full py-3 mt-6 cursor-pointer bg-indigo-500 text-white font-medium hover:bg-indigo-600 transition">
-                    Place Order
+{/* Place Order button */}
+                <button onClick={} className="w-full py-3 mt-6 cursor-pointer bg-indigo-500 text-white font-medium hover:bg-indigo-600 transition">
+                    {paymentOption === "COD" ? "Place Order" : "Process to Checkout"}
                 </button>
             </div>
         </div>
