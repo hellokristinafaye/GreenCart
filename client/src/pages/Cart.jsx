@@ -71,24 +71,21 @@ const Cart = () => {
                     </div>)
                 )}
 
-                <button onClick={() => {
-                    navigate('/products');
-                    scrollTo(0, 0);
-                }} className="group cursor-pointer flex items-center mt-8 gap-2 text-indigo-500 font-medium">
+                <button onClick={() => { navigate('/products'); scrollTo(0, 0)}} className="group cursor-pointer flex items-center mt-8 gap-2 text-indigo-500 font-medium">
                     <img src={assets.arrow_right_icon_colored} alt="arrow" className="group-hover:-translate-x-1 transition" />
                     Continue Shopping
                 </button>
 
             </div>
-
+{/* sidebar */}
             <div className="max-w-[360px] w-full bg-gray-100/40 p-5 max-md:mt-16 border border-gray-300/70">
                 <h2 className="text-xl md:text-xl font-medium">Order Summary</h2>
                 <hr className="border-gray-300 my-5" />
-
+        {/* address section */}
                 <div className="mb-6">
                     <p className="text-sm font-medium uppercase">Delivery Address</p>
                     <div className="relative flex justify-between items-start mt-2">
-                        <p className="text-gray-500">No address found</p>
+                        <p className="text-gray-500">{selectedAddress ? `${selectedAddress.street}, ${selectedAddress.city}, ${selectedAddress.state}, ${selectedAddress.country}` : "No address found" }</p>
                         <button onClick={() => setShowAddress(!showAddress)} className="text-indigo-500 hover:underline cursor-pointer">
                             Change
                         </button>
