@@ -137,7 +137,7 @@ const Cart = () => {
                     </p>
                     <p className="flex justify-between text-lg font-medium mt-3">
                         <span>Total Amount:</span><span>$
-                            {currency}{getCartAmount() + getCartAmount() * .2 / 100}</span>
+                            {currency}{(getCartAmount() + getCartAmount() * .2 / 100).toFixed(2)}</span>
                     </p>
                 </div>
 {/* Place Order button */}
