@@ -39,7 +39,7 @@ const MyOrders = () => {
                               </div>
          {/* item name and category */}
                             <div className="ml-4">
-                                  <h2 className="">{item.product.name}</h2>
+                                  <h2 className="text-xl font-medium text-gray-800">{item.product.name}</h2>
                                   <p className="">{item.product.category}</p>
                             </div>
 
