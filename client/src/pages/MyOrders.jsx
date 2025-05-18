@@ -52,7 +52,7 @@ const MyOrders = () => {
                               {/* order status */}
                               <p className="">Status: {order.status}</p>
                               {/* date */}
-                              <p className="">Date: {new Date(order.createdAt).toLocaleDateString}</p>
+                              <p className="">Date: {new Date(order.createdAt).toLocaleDateString()}</p>
                           </div>
 
                 {/* amount */}
