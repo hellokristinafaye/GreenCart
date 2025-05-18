@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { dummyProducts } from "../assets/assets";
 import toast from "react-hot-toast";
 
+
 export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
 
-    const currency = import.meta.VITE_CURRENCY; 
+    const currency = import.meta.env.VITE_CURRENCY; 
     // VITE_CURRENCY declared in .env file
 
     const navigate = useNavigate();
