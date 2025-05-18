@@ -49,6 +49,8 @@ const MyOrders = () => {
                           <div className="">
                               {/* quantity */}
                               <p className="">Quantity: {item.quantity || "1"}</p>
+                              {/* order status */}
+                              <p className="">Status: {order.status}</p>
                           </div>
 
 
