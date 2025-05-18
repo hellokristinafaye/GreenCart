@@ -33,7 +33,7 @@ const MyOrders = () => {
                   {order.items.map((item, index) => (
                       <div className="">
                           <div className="">
-                              <div className="">
+                              <div className="bg-primary/10 p-4 rounded-lg">
                                   <img src={item.product.image[0]} alt="" className="w-16 h-16" />
                               </div>
                           </div>
