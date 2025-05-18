@@ -55,6 +55,10 @@ const MyOrders = () => {
                               <p className="">Date: {new Date(order.createdAt).toLocaleDateString}</p>
                           </div>
 
+                {/* amount */}
+                    <p className="">
+                              Amount: ${currency}{item.product.offerPrice * item.quantity}
+                    </p>
 
                     </div>
                 ))}
