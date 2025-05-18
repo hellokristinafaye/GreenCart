@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { assets } from '../assets/assets'
 
 // Input Field Component
-const inputField = ({ type, placeholder, name, handleChange, address }) => (
+const InputField = ({ type, placeholder, name, handleChange, address }) => (
     <input
         className="w-full px-2 py-2.5 border border-gray-500/30 rounded outline-none text-gray-500 focus:border-primary transition"
         type={type} 
@@ -49,8 +49,8 @@ const AddAddress = () => {
               <div className="flex-1 max-w-md">
                   <form onSubmit={onSubmitHandler} className="space-y-3 mt-6 text-sm">
                       <div className="">
-                          <inputField handleChange={handleChange} address={address} name='firstName' type="text" placeholder="First Name" />
-                          <inputField handleChange={handleChange} address={address} name='lastName' type="text" placeholder="Last Name" />
+                          <InputField handleChange={handleChange} address={address} name='firstName' type="text" placeholder="First Name" />
+                          <InputField handleChange={handleChange} address={address} name='lastName' type="text" placeholder="Last Name" />
                       </div>                      
 
                   </form>
