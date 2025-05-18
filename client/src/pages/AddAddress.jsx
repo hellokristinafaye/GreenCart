@@ -69,7 +69,7 @@ const AddAddress = () => {
     {/* phone number input */}
                       <InputField handleChange={handleChange} address={address} name='phone' type="text" placeholder="Phone" />
 
-                    <button className="">Save address</button>
+                    <button className="w-full mt-6 bg-primary text-white py-3 hover:bg-primary-dull transition cursor-pointer uppercase">Save address</button>
                       
                   </form>
 
