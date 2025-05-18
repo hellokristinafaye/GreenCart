@@ -52,8 +52,15 @@ const AddAddress = () => {
                           <InputField handleChange={handleChange} address={address} name='firstName' type="text" placeholder="First Name" />
                           <InputField handleChange={handleChange} address={address} name='lastName' type="text" placeholder="Last Name" />
                       </div>                      
-
+                        {/* email input field */}
                       <InputField handleChange={handleChange} address={address} name='email' type="email" placeholder="Email Address" />
+                        {/* street name input field */}
+                      <InputField handleChange={handleChange} address={address} name='street' type="text" placeholder="Street" />
+
+                      <div className="">
+                          <InputField handleChange={handleChange} address={address} name='city' type="text" placeholder="City" />
+                          <InputField handleChange={handleChange} address={address} name='state' type="text" placeholder="State" />
+                      </div>
                       
                   </form>
 
