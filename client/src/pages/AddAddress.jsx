@@ -53,6 +53,8 @@ const AddAddress = () => {
                           <InputField handleChange={handleChange} address={address} name='lastName' type="text" placeholder="Last Name" />
                       </div>                      
 
+                      <InputField handleChange={handleChange} address={address} name='email' type="email" placeholder="Email Address" />
+                      
                   </form>
 
               </div>
