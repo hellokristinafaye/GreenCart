@@ -27,7 +27,8 @@ const AddAddress = () => {
               <div className="flex-1 max-w-md">
                   <form onSubmit={onSubmitHandler} className="space-y-3 mt-6 text-sm">
                       <div className="">
-                        <inputField  />
+                          <inputField handleChange={handleChange} address={address} name='firstName' type="text" placeholder="First Name" />
+                          <inputField handleChange={handleChange} address={address} name='lastName' type="text" placeholder="Last Name" />
                       </div>                      
 
                   </form>
