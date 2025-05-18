@@ -51,6 +51,8 @@ const MyOrders = () => {
                               <p className="">Quantity: {item.quantity || "1"}</p>
                               {/* order status */}
                               <p className="">Status: {order.status}</p>
+                              {/* date */}
+                              <p className="">Date: {new Date(order.createdAt).toLocaleDateString}</p>
                           </div>
 
 
