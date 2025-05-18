@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { assets } from '../assets/assets'
 
 // Input Field Component
@@ -15,11 +15,33 @@ const inputField = ({ type, placeholder, name, handleChange, address }) => (
 
 )
 
-const onSubmitHandler = async (e) => {
-    e.preventDefault();
-}
-
 const AddAddress = () => {
+
+    const [address, setAddress] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        street: '',
+        city: '',
+        state: '',
+        zipcode: '',
+        country: '',
+        phone: '',
+    })
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+
+        setAddress((prevAddress) => ({
+            ...AddAddress,
+            [name]: value,
+        }))
+    }
+
+    const onSubmitHandler = async (e) => {
+        e.preventDefault();
+    }
+
   return (
     <div className="mt-16 pb-16">
           <p className="text-2xl md:text-3xl text-gray-500">Add Shipping <span className="font-semibold text-primary">Address</span></p>
