@@ -2,9 +2,18 @@ import React from 'react'
 import { assets } from '../assets/assets'
 
 // Input Field Component
-const inputField = (() => (
-    <input type="text" className="" />
-))
+const inputField = ({ type, placeholder, name, handleChange, address }) => (
+    <input
+        type={type} 
+        placeholder={placeholder}
+        onChange={handleChange}
+        name={name}
+        value={address[name]}
+        required
+        className=""
+    />
+
+)
 
 const onSubmitHandler = async (e) => {
     e.preventDefault();
@@ -17,7 +26,9 @@ const AddAddress = () => {
           <div className="flex flex-col-reverse md:flex-row justify-between mt-10">
               <div className="flex-1 max-w-md">
                   <form onSubmit={onSubmitHandler} className="space-y-3 mt-6 text-sm">
-                      
+                      <div className="">
+                        <inputField  />
+                      </div>                      
 
                   </form>
 
