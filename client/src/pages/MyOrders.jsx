@@ -60,13 +60,10 @@ const MyOrders = () => {
                     <p className="text-primary text-lg font-medium">
                               Amount: {currency}{item.product.offerPrice * item.quantity}
                     </p>
-
                     </div>
                 ))}
-
             </div>
         ))}    
-
     </div>
   )
 }
