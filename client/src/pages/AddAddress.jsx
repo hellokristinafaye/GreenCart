@@ -66,6 +66,10 @@ const AddAddress = () => {
                           <InputField handleChange={handleChange} address={address} name='zipcode' type="number" placeholder="Zip code" />
                           <InputField handleChange={handleChange} address={address} name='country' type="text" placeholder="Country" />
                       </div>
+    {/* phone number input */}
+                      <InputField handleChange={handleChange} address={address} name='phone' type="text" placeholder="Phone" />
+
+                    <button className="">Save address</button>
                       
                   </form>
 
