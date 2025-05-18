@@ -46,7 +46,7 @@ const MyOrders = () => {
                           </div>
          {/* first col end */}
 
-                          <div className="">
+                          <div className="text-primary text-lg font-medium">
                               {/* quantity */}
                               <p className="">Quantity: {item.quantity || "1"}</p>
                               {/* order status */}
