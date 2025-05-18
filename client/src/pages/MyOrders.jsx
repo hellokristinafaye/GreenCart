@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAppContext } from '../context/AppContext';
 import { dummyOrders } from '../assets/assets';
 
@@ -11,6 +11,10 @@ const MyOrders = () => {
         setMyOrders(dummyOrders);
     } 
 
+    useEffect(() => {
+        fetchMyOrders();
+    },[])
+    
   return (
       <div className="mt-16 pb-16">
           <div className="flex flex-col items-end w-max mb-8">
