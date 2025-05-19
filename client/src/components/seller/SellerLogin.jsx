@@ -22,7 +22,7 @@ const SellerLogin = () => {
       <form onSubmit={onSubmitHandler} action="" className="min-h-screen flex items-center text-sm text-gray-600">
           
           <div className="">
-              
+              <p className=""><span className="text-primary">Seller</span> Login</p>
           </div>
           
     </form>
