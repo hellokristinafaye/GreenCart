@@ -6,16 +6,22 @@ const SellerLogin = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const onSubmitHandler = async (event) => {
+        event.preventDefault();
+        setIsSeller(true);
+    }
+
     useEffect(() => {
         if (isSeller) {
             navigate('/seller');
         }
     }, [isSeller]);
 
-  return (
-      <div>
+    // this is what displays if the seller IS NOT logged in
+  return !isSeller && (
+    <form onSubmit={onSubmitHandler} action="" className="">
           
-    </div>
+    </form>
   )
 }
 
