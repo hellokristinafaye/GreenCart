@@ -19,7 +19,11 @@ const SellerLogin = () => {
 
     // this is what displays if the seller IS NOT logged in
   return !isSeller && (
-    <form onSubmit={onSubmitHandler} action="" className="">
+      <form onSubmit={onSubmitHandler} action="" className="min-h-screen flex items-center text-sm text-gray-600">
+          
+          <div className="">
+              
+          </div>
           
     </form>
   )
