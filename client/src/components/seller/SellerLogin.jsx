@@ -34,7 +34,7 @@ const SellerLogin = () => {
                   <input type="password" className="border border-gray-200 rounded w-full p-2 mt-1 outline-primary" placeholder="Enter your password" required/>
               </div>
 
-              <button className="">Log In</button>
+              <button className="bg-primary text-white w-full py-2 rounded-md cursor-pointer">Log In</button>
 
           </div>
           
