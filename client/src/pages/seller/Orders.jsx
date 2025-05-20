@@ -27,7 +27,7 @@ import { assets, dummyOrders } from '../../assets/assets';
             {order.items.map((item, index) => (
                 <div key={index} className="flex flex-col justify-center">
                     <p className="font-medium">
-                        {item.product.name} <span className={`text-indigo-500 ${item.quantity < 2 && "hidden"}`}>x {item.quantity}</span>
+                        {item.product.name} <span className="text-primary" >x {item.quantity}</span>
                     </p>
                 </div>
             ))}
