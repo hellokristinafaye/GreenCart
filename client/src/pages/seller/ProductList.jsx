@@ -1,6 +1,7 @@
 import React from 'react'
+import { useAppContext } from '../../context/AppContext'
 
-    
+const { products, currency } = useAppContext();
 
 const ProductList = () => {
   return (
