@@ -35,8 +35,13 @@ import { assets, dummyOrders } from '../../assets/assets';
     </div>
 
     <div className="text-sm md:text-base text-black/60">
-        <p className='font-medium mb-1'>{order.address.firstName} {order.address.lastName}</p>
-        <p>{order.address.street}, {order.address.city}, {order.address.state},{order.address.zipcode}, {order.address.country}</p>
+                          <p className='text-black/80d'>
+                              {order.address.firstName} {order.address.lastName}</p>
+                          
+                          <p>{order.address.street}, {order.address.city}</p>
+                          <p className=""> {order.address.state},{order.address.zipcode}, {order.address.country}</p>
+                          <p className=""></p>
+                          <p className="">{order.address.phone }</p>
     </div>
 
     <p className="font-medium text-base my-auto text-black/70">${order.amount}</p>
