@@ -24,8 +24,10 @@ const AddProduct = () => {
                             <label key={index} htmlFor={`image${index}`}>
 
                                 <input onChange={(e) => {
+                                    // this block accepts uploaded files from the seller
                                     const updatedFiles = [...files];
-                                    
+                                    updatedFiles[index] = e.target.files[0]
+                                    setFiles(updatedFiles)
                                 }} accept="image/*" type="file" id={`image${index}`} hidden />
 
                                 <img className="max-w-24 cursor-pointer"
