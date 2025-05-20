@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { assets } from '../../assets/assets';
 
 const AddProduct = () => {
     // state variables
@@ -22,7 +23,9 @@ const AddProduct = () => {
                         {Array(4).fill('').map((_, index) => (
                             <label key={index} htmlFor={`image${index}`}>
                                 <input accept="image/*" type="file" id={`image${index}`} hidden />
-                                <img className="max-w-24 cursor-pointer" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/e-commerce/uploadArea.png" alt="uploadArea" width={100} height={100} />
+                                <img className="max-w-24 cursor-pointer"
+                                    src={files[index] ? URL.createObjectURL(files[index]) : assets.upload_area}
+                                    alt="uploadArea" width={100} height={100} />
                             </label>
                         ))}
                     </div>
