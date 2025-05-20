@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { assets } from "../../assets/assets";
 import { useAppContext } from "../../context/AppContext";
 
@@ -16,9 +17,9 @@ const SellerLayout = () => {
     return (
         <>
             <div className="flex items-center justify-between px-4 md:px-8 border-b border-gray-300 py-3 bg-white">
-                <a href="/">
-                    <img className="h-9" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoColored.svg" alt="dummyLogoColored" />
-                </a>
+                <Link to='/'>
+                    <img src={assets.logo} alt="logo" className="cursor-pointer w-34 md:w-38" />
+                </Link>
                 <div className="flex items-center gap-5 text-gray-500">
                     <p>Hi! Admin</p>
                     <button className='border rounded-full text-sm px-4 py-1'>Logout</button>
