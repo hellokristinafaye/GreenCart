@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAppContext } from '../../context/AppContext'
 import { dummyOrders } from '../../assets/assets';
 
@@ -10,6 +10,10 @@ const Orders = () => {
     const fetchOrders = async () => {
         setOrders(dummyOrders)
     }
+
+    useEffect(() => {
+        fetchOrders();
+    },[])
 
   return (
         <div className="md:p-10 p-4 space-y-4">
