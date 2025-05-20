@@ -22,7 +22,12 @@ const AddProduct = () => {
                     <div className="flex flex-wrap items-center gap-3 mt-2">
                         {Array(4).fill('').map((_, index) => (
                             <label key={index} htmlFor={`image${index}`}>
-                                <input accept="image/*" type="file" id={`image${index}`} hidden />
+
+                                <input onChange={(e) => {
+                                    const updatedFiles = [...files];
+                                    
+                                }} accept="image/*" type="file" id={`image${index}`} hidden />
+
                                 <img className="max-w-24 cursor-pointer"
                                     src={files[index] ? URL.createObjectURL(files[index]) : assets.upload_area}
                                     alt="uploadArea" width={100} height={100} />
