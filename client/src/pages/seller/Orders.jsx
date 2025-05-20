@@ -39,7 +39,7 @@ import { assets, dummyOrders } from '../../assets/assets';
                               {order.address.firstName} {order.address.lastName}</p>
                           
                           <p>{order.address.street}, {order.address.city}</p>
-                          <p className=""> {order.address.state},{order.address.zipcode}, {order.address.country}</p>
+                          <p className=""> {order.address.state}, {order.address.zipcode}, {order.address.country}</p>
                           <p className=""></p>
                           <p className="">{order.address.phone }</p>
     </div>
