@@ -1,4 +1,4 @@
-    import { Link, NavLink } from "react-router-dom";
+    import { Link, NavLink, Outlet } from "react-router-dom";
     import { assets } from "../../assets/assets";
     import { useAppContext } from "../../context/AppContext";
 
@@ -49,7 +49,7 @@
                                 </NavLink>
                             ))}
                         </div>
-                        
+                        <Outlet/>
                     </div>
                 </>
         );
