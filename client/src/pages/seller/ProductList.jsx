@@ -1,10 +1,12 @@
 import React from 'react'
 import { useAppContext } from '../../context/AppContext'
 
-const { products, currency } = useAppContext();
 
 const ProductList = () => {
-  return (
+        
+    const { products, currency } = useAppContext();
+    
+    return (
     
       <div className="no-scrollbar flex-1 h-[95vh] overflow-y-scroll flex flex-col justify-between">
             <div className="w-full md:p-10 p-4">
