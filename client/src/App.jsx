@@ -21,7 +21,7 @@ const App = () => {
   const { showUserLogin, isSeller } = useAppContext();
   
   return (
-    <div>
+    <div className="text-default min-h-screen text-gray-700 bg-white">
       {/* conditional navbar */}
       {isSellerPath ? null : <Navbar />}
       {/* log in card */}
@@ -42,8 +42,8 @@ const App = () => {
           <Route path='/seller' element={isSeller ? null : <SellerLogin />}>
 
           </Route>
-          {/* just so I can see the changes, but TBH it's not coming up properly lol */}
-          <Route path='/seller/test' element={<SellerLayout />} />
+          {/* just so I can see the changes, but TBH it's not coming up properly lol
+          <Route path='/seller/test' element={<SellerLayout />} /> */}
 
         </Routes>
       </div>
