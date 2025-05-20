@@ -39,11 +39,9 @@ const App = () => {
           <Route path='/add-address' element={<AddAddress/>} />
           <Route path='/my-orders' element={<MyOrders />} />
 
-          <Route path='/seller' element={isSeller ? null : <SellerLogin />}>
+          <Route path='/seller' element={isSeller ? <SellerLayout/> : <SellerLogin />}>
 
           </Route>
-          {/* just so I can see the changes, but TBH it's not coming up properly lol
-          <Route path='/seller/test' element={<SellerLayout />} /> */}
 
         </Routes>
       </div>
