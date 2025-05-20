@@ -2,7 +2,7 @@ import React from 'react'
 
 const AddProduct = () => {
   return (
-    <div className="py-10 flex flex-col justify-between bg-white">
+    <div className="no-scrollbar flex-1 h-[95vh] overflow-y-scroll flex flex-col justify-between">
             <form className="md:p-10 p-4 space-y-5 max-w-lg">
                 <div>
                     <p className="text-base font-medium">Product Image</p>
