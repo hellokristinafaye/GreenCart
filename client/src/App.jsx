@@ -13,6 +13,7 @@ import Cart from './pages/Cart'
 import AddAddress from './pages/AddAddress'
 import MyOrders from './pages/MyOrders'
 import SellerLogin from './components/seller/SellerLogin'
+import SellerLayout from './pages/seller/SellerLayout'
 
 const App = () => {
   
@@ -41,7 +42,9 @@ const App = () => {
           <Route path='/seller' element={isSeller ? null : <SellerLogin />}>
 
           </Route>
-          
+          {/* just so I can see the changes, but TBH it's not coming up properly lol */}
+          <Route path='/seller/test' element={<SellerLayout />} />
+
         </Routes>
       </div>
       {!isSellerPath && <Footer />}
