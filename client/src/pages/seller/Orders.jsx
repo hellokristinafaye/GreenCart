@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useAppContext } from '../../context/AppContext'
-import { dummyOrders } from '../../assets/assets';
+import { assets, dummyOrders } from '../../assets/assets';
 
     const Orders = () => {
     // state variables
@@ -21,8 +21,8 @@ import { dummyOrders } from '../../assets/assets';
              <h2 className="text-lg font-medium">Orders List</h2>
               {orders.map((order, index) => (
                   <div key={index} className="flex flex-col md:grid md:grid-cols-[2fr_1fr_1fr_1fr] md:items-center gap-5 p-5 max-w-4xl rounded-md border border-gray-300 text-gray-800">
-                 <div className="flex gap-5">
-                 <img className="w-12 h-12 object-cover opacity-60" src={boxIcon} alt="boxIcon" />
+                    <div className="flex gap-5">
+                        <img className="w-12 h-12 object-cover opacity-60" src={assets.box_icon} alt="boxIcon" />
         <>
             {order.items.map((item, index) => (
                 <div key={index} className="flex flex-col justify-center">
