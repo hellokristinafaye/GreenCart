@@ -9,6 +9,10 @@ const AddProduct = () => {
     const [price, setPrice] = useState([]);
     const [offerPrice, setOfferPrice] = useState([]);
 
+    const onSubmitHandler = async (event) => {
+        event.preventDefault();
+    }
+
   return (
     <div className="no-scrollbar flex-1 h-[95vh] overflow-y-scroll flex flex-col justify-between">
             <form className="md:p-10 p-4 space-y-5 max-w-lg">
