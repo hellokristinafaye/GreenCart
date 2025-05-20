@@ -44,7 +44,7 @@ import { assets, dummyOrders } from '../../assets/assets';
                           <p className="">{order.address.phone }</p>
     </div>
 
-                      <p className="font-medium text-base my-auto text-black/70">{currency}{order.amount}</p>
+                      <p className="font-medium text-lg my-auto">{currency}{order.amount}</p>
 
     <div className="flex flex-col text-sm">
         <p>Method: {order.paymentType}</p>
