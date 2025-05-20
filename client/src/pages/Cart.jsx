@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
 import { assets, dummyAddress } from "../assets/assets";
+import toast from "react-hot-toast";
 
 const Cart = () => {
 // money moves
@@ -29,7 +30,8 @@ const Cart = () => {
     }
 
     const placeOrder = async () => {
-        alert("Free 99!")
+        // placeholder action
+        toast.success("Free .99!")
         // logic to be written when we do the backend.
     }
 
