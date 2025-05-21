@@ -5,6 +5,8 @@ const app = express();
 // tries a port in the .env file first, otherwise uses port 4000
 const port = process.env.PORT || 4000;
 
+const allowedOrigins = ['http://localhost:5173'];
+
 // Middleware config so all the data comes in as a json
 app.use(express.json());
 app.use(cookieParser());
