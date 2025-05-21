@@ -12,6 +12,14 @@ Technologies Used:
 - Tailwind CSS
 - Vite
 - prebuiltui.com
+- bcrypt
+- Cloudinary
+- Cookie Parser
+- CORS
+- .env
+- JSON Web Token
+- Multer
+- Stripe
 
 Features:
 
