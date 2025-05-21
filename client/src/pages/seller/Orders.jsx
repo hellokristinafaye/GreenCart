@@ -8,11 +8,11 @@ import { assets, dummyOrders } from '../../assets/assets';
     const [orders, setOrders] = useState([]);
     // fetches orders
     const fetchOrders = async () => {
-    setOrders(dummyOrders)
+        setOrders(dummyOrders)
     }
-
+    // is called whenevr the page is loaded (b/c the array is empty)
     useEffect(() => {
-    fetchOrders();
+        fetchOrders();
     },[])
 
     return (
