@@ -8,6 +8,8 @@ const port = process.env.PORT || 4000;
 // Middleware config so all the data comes in as a json
 app.use(express.json());
 app.use(cookieParser());
+// cors dictates what sources of data are allowed?? 
+app.use(cors({origin: allowedOrigins, credentials: true}));
 
 // when we send a request, the working response is below
 app.get('/', (req, res) => res.send("API is Working"));
