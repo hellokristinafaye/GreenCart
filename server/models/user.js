@@ -6,5 +6,5 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true},
     cartItems: { type: Object, default: {}},
 }, { minimize: false })
-
-
+// checks if there is already a user, if not use the model schema
+const User = mongoose.models.user || mongoose.model('user', userSchema);
