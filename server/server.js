@@ -1,10 +1,11 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
 const app = express();
 // tries a port in the .env file first, otherwise uses port 4000
 const port = process.env.PORT || 4000;
-
+// the url of our current client. **Allow multiple origins
 const allowedOrigins = ['http://localhost:5173'];
 
 // Middleware config so all the data comes in as a json
