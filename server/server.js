@@ -6,3 +6,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 // when we send a request, the working response is below
 app.get('/', (req, res) => response.send("API is Working"));
+// start app, look for this console log for positive feedback
+app.listen(port, () => {
+    console.log(`Server is running on http://localhose:${port}`)
+})
