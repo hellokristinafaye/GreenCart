@@ -1,10 +1,15 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+// you need to add the .js !! 
+import connectDB from './configs/db.js';
 
 const app = express();
 // tries a port in the .env file first, otherwise uses port 4000
 const port = process.env.PORT || 4000;
+
+await connectDB
+
 // the url of our current client. **Allow multiple origins
 const allowedOrigins = ['http://localhost:5173'];
 
