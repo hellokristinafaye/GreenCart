@@ -13,3 +13,8 @@ export const productList = async (req, res) => {
 export const productById = async (req, res) => {
     
 } 
+
+// Change Product inStork : /api/product/stock
+export const changeStock = async (req, res) => {
+    
+} 
