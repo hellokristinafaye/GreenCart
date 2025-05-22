@@ -56,8 +56,22 @@ export const login = async(req, res)=> {
         if (!isMatch) {
             return res.json({ success: false, message: 'Invalid email or password.' });
         }
+        // generate a token
+
+        // when the user is created, this creates a unique id for them. Uses a secret from the .env file and has an expiration date of 7 days out
+        const token = JWT.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
+
+        res.cookie('token', token, {
+            httpOnly: true, //Prevents JS from accessing cookie
+            secure: process.env.NODE_ENV === 'production', // use secure cookies in production
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict', // CSRF protection
+            maxAge: 7 * 24 * 60 * 60 * 1000, //Cookie expiration time (7days in miliseconds)
+        })
+        // what happens when it creates a new user. Asigns new email and name based on input
+        return res.json({ success: true, user: { email: user.email, name: user.name } })
 
     } catch (error) {
-        
+        console.log(error.message);
+        res.json({ success: false, message: error.message });
     }
 }
