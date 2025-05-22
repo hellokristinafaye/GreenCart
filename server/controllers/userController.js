@@ -1,6 +1,6 @@
 import User from "../models/user.js";
 import bcrypt from "bcryptjs";
-import JWT from "jsonwebtoken";
+import jwt from 'jsonwebtoken';
 
 // Register User : /api/user/register
 export const register = async (req, res) => {
@@ -20,13 +20,13 @@ export const register = async (req, res) => {
         // creates new user with a hashed password
         const user = await User.create({name, email, password: hashedPassword})
         // when the user is created, this creates a unique id for them. Uses a secret from the .env file and has an expiration date of 7 days out
-        const token = JWT.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
 
         res.cookie('token', token, {
             httpOnly: true, //Prevents JS from accessing cookie
             secure: process.env.NODE_ENV === 'production', // use secure cookies in production
             sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict', // CSRF protection
-            maxAge: 7*24*60*60*1000, //Cookie expiration time (7days in miliseconds)
+            maxAge: 7 * 24 * 60 * 60 * 1000, //Cookie expiration time (7days in miliseconds)
         })
         // what happens when it creates a new user. Asigns new email and name based on input
         return res.json({ success: true, user: {email: user.email, name: user.name} })
@@ -60,7 +60,7 @@ export const login = async(req, res)=> {
         // generate a token
 
         // when the user is created, this creates a unique id for them. Uses a secret from the .env file and has an expiration date of 7 days out
-        const token = JWT.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
 
         res.cookie('token', token, {
             httpOnly: true, //Prevents JS from accessing cookie
@@ -69,7 +69,7 @@ export const login = async(req, res)=> {
             maxAge: 7 * 24 * 60 * 60 * 1000, //Cookie expiration time (7days in miliseconds)
         })
         // what happens when it creates a new user. Asigns new email and name based on input
-        return res.json({ success: true, user: { email: user.email, name: user.name } })
+        return res.json({ success: true, user: { email: user.email, name: user.name, id: user._id } })
 
     } catch (error) {
         console.log(error.message);
@@ -80,9 +80,12 @@ export const login = async(req, res)=> {
 // Check Auth : /api/user/is-auth
 export const isAuth = async (req, res) => {
     try {
-        const { userId } = req.body;
-        // finds by Id and removes the password from the object
-        const user = await User.findById(userId).select("-password");
+        // const { userId } = req.body;
+        // // finds by Id and removes the password from the object
+        // const user = await User.findById(userId).select("-password");
+
+        const { id } = req.body;
+        const user = await User.findById(id).select("-password");
 
         return res.json({ success: true, user });
 
