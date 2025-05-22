@@ -32,6 +32,7 @@ export const register = async (req, res) => {
         // what happens when it creates a new user. Asigns new email and name based on input
         return res.json({ success: true, user: {email: user.email, name: user.name} })
     } catch (error) {
-        
+        console.log(error.message);
+        res.json({ success: false, message: error.message });
     }
 }
