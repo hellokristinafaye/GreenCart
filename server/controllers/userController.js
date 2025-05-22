@@ -28,7 +28,9 @@ export const register = async (req, res) => {
             secure: process.env.NODE_ENV === 'production', // use secure cookies in production
             sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict', // CSRF protection
             maxAge: 7*24*60*60*1000, //Cookie expiration time (7days in miliseconds)
-        });
+        })
+        // what happens when it creates a new user. Asigns new email and name based on input
+        return res.json({ success: true, user: {email: user.email, name: user.name} })
     } catch (error) {
         
     }
