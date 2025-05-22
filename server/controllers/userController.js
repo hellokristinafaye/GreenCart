@@ -25,7 +25,9 @@ export const register = async (req, res) => {
 
         res.cookie('token', token, {
             httpOnly: true, //Prevents JS from accessing cookie
-            secure: process.env.NODE_ENV === 'production' // use secure cookies in production
+            secure: process.env.NODE_ENV === 'production', // use secure cookies in production
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict' // CSRF protection
+            
         });
     } catch (error) {
         
