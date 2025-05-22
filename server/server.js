@@ -4,6 +4,7 @@ import cors from 'cors';
 // you need to add the .js !! 
 import connectDB from './configs/db.js';
 import 'dotenv/config';
+import userRouter from './routes/userRoute.js';
 
 const app = express();
 // tries a port in the .env file first, otherwise uses port 4000
@@ -22,6 +23,8 @@ app.use(cors({origin: allowedOrigins, credentials: true}));
 
 // when we send a request, the working response is below
 app.get('/', (req, res) => res.send("API is Working"));
+
+app.use('/api/user', userRouter)
 // start app, look for this console log for positive feedback
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`)
