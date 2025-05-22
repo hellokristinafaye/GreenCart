@@ -39,12 +39,13 @@ export const register = async (req, res) => {
 // Login User : /api/user/login
 export const login = async(req, res)=> {
     try {
+    // receives email and password from request body object
         const { email, password } = req.body;
 
         if (!email || !password) {
             return res.json({ success: false, message: 'Email and password are required.' })
         };
-
+    // receives user from request body object
         const user = await User.findOne({ email });
 
         if (!user) {
