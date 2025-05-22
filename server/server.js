@@ -5,6 +5,7 @@ import cors from 'cors';
 import connectDB from './configs/db.js';
 import 'dotenv/config.js';
 import userRouter from './routes/userRoute.js';
+import sellerRouter from './routes/sellerRoute.js';
 
 const app = express();
 // tries a port in the .env file first, otherwise uses port 4000
@@ -25,6 +26,8 @@ app.use(cors({origin: allowedOrigins, credentials: true}));
 app.get('/', (req, res) => res.send("API is Working"));
 
 app.use('/api/user', userRouter)
+app.use('/api/seller', sellerRouter)
+
 // start app, look for this console log for positive feedback
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`)
