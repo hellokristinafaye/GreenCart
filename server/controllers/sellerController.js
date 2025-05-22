@@ -29,7 +29,7 @@ export const sellerLogin = async (req, res) => {
 // Seller isAuth : /api/seller/is-auth
 export const isSellerAuth = async (req, res) => {
     try {
-        return res.json({ success: true })
+        return res.json({ success: true, message: "why don't we need a cookie here?" })
     } catch (error) {
         console.log(error.message);
         res.json({ success: false, message: error.message });
@@ -51,3 +51,5 @@ export const sellerLogout = async (req, res) => {
         res.json({ success: false, message: error.message });
     }
 }
+
+// OK tested out these routes and they work great! you do have to submit the req in a json just like the user. Not sure why we don't need a register route for sellers, or why we don't need cookies for them?? Like wouldn't we wanna apply the same thing to a Seller account vs a User account?? 
