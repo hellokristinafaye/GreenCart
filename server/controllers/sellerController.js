@@ -15,6 +15,8 @@ export const sellerLogin = async (req, res) => {
             maxAge: 7 * 24 * 60 * 60 * 1000, //Cookie expiration time (7days in miliseconds)
         });
 
-        return res.json({ success: true, message: "Seller Logged In" });
-    } else 
+        return res.json({ success: true, message: "Logged In - Seller" });
+    } else {
+        return res.json({ success: false, message: "Invalid Credentials - Seller" });
+    }
 }
