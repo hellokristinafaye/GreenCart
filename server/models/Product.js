@@ -7,7 +7,7 @@ const productSchema = new mongoose.Schema({
     offerPrice: { type: Number, required: true},
     image: { type: Array, required: true},
     category: { type: String, required: true},
-    cartItems: { type: Object, default: {}},
+    inStock: { type: Boolean, default: true},
 }, { minimize: false })
 
 // checks if there is already a user, if not use the model schema
