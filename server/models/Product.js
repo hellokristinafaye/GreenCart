@@ -8,7 +8,7 @@ const productSchema = new mongoose.Schema({
     image: { type: Array, required: true},
     category: { type: String, required: true},
     inStock: { type: Boolean, default: true},
-}, { minimize: false })
+}, { timestamps: true })
 
 // checks if there is already a user, if not use the model schema
 const Product = mongoose.models.product || mongoose.model('product', userSchema);
