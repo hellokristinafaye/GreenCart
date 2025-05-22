@@ -20,8 +20,8 @@ export const register = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         // creates new user with a hashed password
         const user = await User.create({name, email, password: hashedPassword})
-        // when the user is created, this creates a unique id for them
-        const token = JWT.sign({id: user._id}, )
+        // when the user is created, this creates a unique id for them. Uses a secret from the .env file and has an expiration date of 7 days out
+        const token = JWT.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
     } catch (error) {
         
     }
