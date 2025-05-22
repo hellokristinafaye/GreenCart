@@ -8,6 +8,6 @@ const productSchema = new mongoose.Schema({
 }, { minimize: false })
 
 // checks if there is already a user, if not use the model schema
-const User = mongoose.models.user || mongoose.model('user', userSchema);
+const Product = mongoose.models.product || mongoose.model('product', userSchema);
 
-export default User
+export default Product
