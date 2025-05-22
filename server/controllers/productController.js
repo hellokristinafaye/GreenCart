@@ -1,7 +1,14 @@
 
 // Add Product : /api/product/add
 export const addProduct = async (req, res) => {
-    
+    try {
+    // gets product info in the form of a JSON from the request body
+        let productData = JSON.parse(req.body.productData);
+// takes images in the form of files
+        const images = req.files;
+    } catch (error) {
+        
+    }
 } 
 
 // Get Product : /api/product/list
