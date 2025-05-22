@@ -27,17 +27,9 @@ export const sellerLogin = async (req, res) => {
 }
 
 // Seller isAuth : /api/seller/is-auth
-export const isAuth = async (req, res) => {
+export const isSellerAuth = async (req, res) => {
     try {
-        const { userId } = req.body;
-        // finds by Id and removes the password from the object
-        const user = await User.findById(userId).select("-password");
-
-        // const { id } = req.body;
-        // const user = await User.findById(id).select("-password");
-
-        return res.json({ success: true, user });
-
+        return res.json({ success: true })
     } catch (error) {
         console.log(error.message);
         res.json({ success: false, message: error.message });
