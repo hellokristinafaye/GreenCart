@@ -23,7 +23,10 @@ export const register = async (req, res) => {
         // when the user is created, this creates a unique id for them. Uses a secret from the .env file and has an expiration date of 7 days out
         const token = JWT.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
 
-        res.cookie('token', token);
+        res.cookie('token', token, {
+            httpOnly: true, //Prevents JS from accessing cookie
+            secure: process.env.NODE_ENV === 'production' // use secure cookies in production
+        });
     } catch (error) {
         
     }
