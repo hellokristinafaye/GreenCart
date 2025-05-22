@@ -5,15 +5,15 @@ export const sellerLogin = async (req, res) => {
    try {
        const { email, password } = req.body;
 
-       if (password === process.env.SELLER_PASSWORD && email === SELLER_EMAIL) {
+       if (password === process.env.SELLER_PASSWORD && email === process.env.SELLER_EMAIL) {
            // creates token if email and password match
            const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '7d' });
 
            res.cookie('sellerToken', token, {
-               httpOnly: true, //Prevents JS from accessing cookie
-               secure: process.env.NODE_ENV === 'production', // use secure cookies in production
-               sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict', // CSRF protection
-               maxAge: 7 * 24 * 60 * 60 * 1000, //Cookie expiration time (7days in miliseconds)
+               httpOnly: true, 
+               secure: process.env.NODE_ENV === 'production', 
+               sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict', 
+               maxAge: 7 * 24 * 60 * 60 * 1000, 
            });
 
            return res.json({ success: true, message: "Logged In - Seller" });
