@@ -11,6 +11,7 @@ const authUser = async (req, res, next) => {
         // verifies the token w/ the secret
         const tokenDecode = jwt.verify(token, process.env.JWT_SECRET)
         // OK!! This tip was found on Stack Overflow and I *THINK* it's the right move?? either setting req.body to an empty object OR submitting an empty object as a req on Postman.  What a weird magical solve?? It doesn't exactly match the tutorial but it does produce the correct result.. and feels scalable. (5/22/25 1:20pm) Gonna remove all my messy work now. 
+        // the error it was throwing was: "message": "Cannot set properties of undefined (setting 'userId')"
         req.body = {}
 
         if (tokenDecode.id) {
