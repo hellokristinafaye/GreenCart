@@ -14,6 +14,8 @@ const authUser = async (req, res, next) => {
         if (tokenDecode.id) {
             // if the token IS good and available, assign userId in the req.body to it
             req.body.userId = tokenDecode.id
+        } else {
+            return res.json({ success: false, message: 'Not Authorized' });
         }
     } catch (error) {
         
