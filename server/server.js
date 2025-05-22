@@ -3,7 +3,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 // you need to add the .js !! 
 import connectDB from './configs/db.js';
-import 'dotenv/config';
+import 'dotenv/config.js';
 import userRouter from './routes/userRoute.js';
 
 const app = express();
