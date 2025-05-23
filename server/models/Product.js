@@ -11,6 +11,6 @@ const productSchema = new mongoose.Schema({
 }, { timestamps: true })
 
 // checks if there is already a user, if not use the model schema
-const Product = mongoose.models.product || mongoose.model('product', userSchema);
+const Product = mongoose.models.product || mongoose.model('product', productSchema);
 
 export default Product
