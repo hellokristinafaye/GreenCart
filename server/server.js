@@ -7,7 +7,6 @@ import 'dotenv/config.js';
 import userRouter from './routes/userRoute.js';
 import sellerRouter from './routes/sellerRoute.js';
 import connectCloudinary from './configs/cloudinary.js';
-import productRouter from './routes/productRoute.js';
 
 const app = express();
 // tries a port in the .env file first, otherwise uses port 4000
