@@ -45,6 +45,7 @@ export const productList = async (req, res) => {
 } 
 
 // Get Single Product : /api/product/id
+// tested, but doesn't quite work b/c I think we don't have those ids. even w/ a dummy object
 export const productById = async (req, res) => {
     try {
         const { id } = req.body
