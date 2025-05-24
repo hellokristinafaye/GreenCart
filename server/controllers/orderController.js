@@ -29,6 +29,7 @@ export const placeOrderCOD = async (req, res) => {
 
         return res.json({ success: true, message: "Order Place Successfully"})
     } catch (error) {
-        
+        console.log(error.message);
+        return res.json({ success: false, message: error.message });
     }
 }
