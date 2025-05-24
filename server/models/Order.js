@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema({
-    userId: {type: String, requred: true, ref: 'user' },
+    userId: { type: String, requred: true, ref: 'user' },
     items: [{
         product: { type: String, requred: true, ref: 'product' },
         quantity: { type: Number, requred: true }
@@ -11,7 +11,7 @@ const orderSchema = new mongoose.Schema({
     status: { type: String, default: 'Order Placed' },
     paymentType: { type: String, requred: true },
     isPaid: { type: Boolean, requred: true, default: false },
-}, )
+}, { timestamps: true });
 
 // if an order exists it is called, if not it is created w/ the name order and an orderSchema
 const Order = mongoose.models.order || mongoose.model('order', orderSchema);
