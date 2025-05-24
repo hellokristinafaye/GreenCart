@@ -28,6 +28,7 @@ app.use(cors({origin: allowedOrigins, credentials: true}));
 // when we send a request, the working response is below
 app.get('/', (req, res) => res.send("API is Working"));
 
+// routes for user, seller, and product
 app.use('/api/user', userRouter)
 app.use('/api/seller', sellerRouter)
 app.use('/api/product', productRouter)
