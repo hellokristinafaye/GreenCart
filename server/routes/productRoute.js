@@ -10,4 +10,5 @@ productRouter.get('/list', productList);
 productRouter.get('/list', productById);
 productRouter.post('/stock', authSeller, changeStock);
 
+export default productRouter;
 
