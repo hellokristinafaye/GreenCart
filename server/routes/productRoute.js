@@ -5,6 +5,7 @@ import { addProduct, changeStock, productById, productList } from '../controller
 
 const productRouter = express.Router();
 
+// b/c it's throwing an error regarding the image... 
 // productRouter.post('/add', upload.array([image]), authSeller, addProduct);
 productRouter.get('/list', productList);
 productRouter.get('/list', productById);
