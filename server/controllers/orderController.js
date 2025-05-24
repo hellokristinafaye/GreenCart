@@ -13,6 +13,11 @@ export const placeOrderCOD = async (req, res) => {
             const product = await Product.findById(item.product);
             return (await acc) + product.offerPrice * item.quantity
         }, 0)
+
+        // Add Tax Charge (2%)
+        amount += Math.floor(amount * .02);
+
+        
     } catch (error) {
         
     }
