@@ -1,4 +1,4 @@
-import Order from "../models/Order";
+import Order from "../models/Order.js";
 import Product from "../models/Product.js";
 
 
@@ -18,7 +18,16 @@ export const placeOrderCOD = async (req, res) => {
         // Add Tax Charge (2%)
         amount += Math.floor(amount * .02);
 
-        await Order
+        // Create the Order object with these properties
+        await Order.create({
+            userId,
+            items,
+            amount,
+            address,
+            paymentType: "COD",
+        })
+
+        return res.json({ success: true, message: "Order Place Successfully"})
     } catch (error) {
         
     }
