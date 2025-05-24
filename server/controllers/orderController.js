@@ -8,10 +8,11 @@ export const placeOrderCOD = async (req, res) => {
         if (!address || items.length === 0) {
             return res.json({success:false, message: "Invalid Data"})
         }
-        // Calculate Amount Using Items
+        // Calculate Amount Using Item quantity
         let amount = await items.reduce(async (acc, item) => {
-            const product = await Product.findById(item.product)
-        })
+            const product = await Product.findById(item.product);
+            return (await acc) + product.offerPrice * item.quantity
+        }, 0)
     } catch (error) {
         
     }
