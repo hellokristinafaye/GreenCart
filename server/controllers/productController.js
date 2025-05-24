@@ -58,6 +58,7 @@ export const productById = async (req, res) => {
 } 
 
 // Change Product inStork : /api/product/stock
+// tested, works, but didn't send data.
 export const changeStock = async (req, res) => {
     try {
         const { id, inStock } = req.body;
