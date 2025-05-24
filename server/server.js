@@ -7,6 +7,7 @@ import 'dotenv/config.js';
 import userRouter from './routes/userRoute.js';
 import sellerRouter from './routes/sellerRoute.js';
 import connectCloudinary from './configs/cloudinary.js';
+import productRouter from './routes/productRoute.js';
 
 const app = express();
 // tries a port in the .env file first, otherwise uses port 4000
@@ -29,6 +30,7 @@ app.get('/', (req, res) => res.send("API is Working"));
 
 app.use('/api/user', userRouter)
 app.use('/api/seller', sellerRouter)
+app.use('/api/product', productRouter)
 
 // start app, look for this console log for positive feedback
 app.listen(port, () => {
