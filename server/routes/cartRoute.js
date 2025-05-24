@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import express from 'express';
 import { updateCart } from "../controllers/cartController.js";
 import authUser from "../middlewares/authUser.js";
