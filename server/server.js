@@ -9,6 +9,7 @@ import sellerRouter from './routes/sellerRoute.js';
 import connectCloudinary from './configs/cloudinary.js';
 import productRouter from './routes/productRoute.js';
 import cartRouter from './routes/cartRoute.js';
+import addressRouter from './routes/addressRoute.js';
 
 const app = express();
 // tries a port in the .env file first, otherwise uses port 4000
@@ -29,11 +30,12 @@ app.use(cors({origin: allowedOrigins, credentials: true}));
 // when we send a request, the working response is below
 app.get('/', (req, res) => res.send("API is Working"));
 
-// routes for user, seller, product, and cart
+// routes for user, seller, product, cart and address
 app.use('/api/user', userRouter)
 app.use('/api/seller', sellerRouter)
 app.use('/api/product', productRouter)
 app.use('/api/cart', cartRouter)
+app.use('/api/address', addressRouter)
 
 // start app, look for this console log for positive feedback
 app.listen(port, () => {
