@@ -1,5 +1,8 @@
 import { v2 as cloudinary } from "cloudinary";
 import Product from "../models/Product.js";
+import { upload } from '../configs/multer.js'
+
+// do we need {upload} from multer here?? 
 
 // Add Product : /api/product/add
 export const addProduct = async (req, res) => {
@@ -29,6 +32,7 @@ export const addProduct = async (req, res) => {
 } 
 
 // Get Product : /api/product/list
+// tested and works! 
 export const productList = async (req, res) => {
     try {
         const products = await Product.find({});
