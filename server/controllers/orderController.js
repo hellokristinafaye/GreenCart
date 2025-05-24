@@ -1,3 +1,4 @@
+import Order from "../models/Order";
 import Product from "../models/Product.js";
 
 
@@ -17,7 +18,7 @@ export const placeOrderCOD = async (req, res) => {
         // Add Tax Charge (2%)
         amount += Math.floor(amount * .02);
 
-        
+        await Order
     } catch (error) {
         
     }
