@@ -33,3 +33,13 @@ export const placeOrderCOD = async (req, res) => {
         return res.json({ success: false, message: error.message });
     }
 }
+
+// Get Orders by User Id: /api/orders/user
+export const getUserOrders = async (req, res) => {
+    try {
+        const { userId } = req.body;
+        
+    } catch (error) {
+        
+    }
+}
