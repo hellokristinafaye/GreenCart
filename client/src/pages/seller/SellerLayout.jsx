@@ -1,13 +1,11 @@
     import { Link, NavLink, Outlet } from "react-router-dom";
     import { assets } from "../../assets/assets";
-    import { useAppContext, axios, navigate } from "../../context/AppContext";
+    import { useAppContext } from "../../context/AppContext";
 import toast from "react-hot-toast";
 
     const SellerLayout = () => {
 
-        const { setIsSeller } = useAppContext();
-
-
+         const { axios, navigate } = useAppContext()
 
         const sidebarLinks = [
             { name: "Add Product", path: "/seller", icon: assets.add_icon },
@@ -17,20 +15,19 @@ import toast from "react-hot-toast";
 
         const logout = async () => {
             try {
-                // api call
                 const { data } = await axios.get('/api/seller/logout');
                 if (data.success) {
-                    toast.success(data.message);
-                    navigate('/');
+                    toast.success(data.message)
+                    navigate('/')
                 } else {
-                    toast.error(data.message);
+                    toast.error(data.message)
                 }
             } catch (error) {
-                toast.error(error.message);
+                    toast.error(error.message)
             }
         }
 
-        // this should display when the Seller is logged in
+        // this should display when the Seller is logged
         return (
             <>
                 <div className="flex items-center justify-between px-4 md:px-8 border-b border-gray-300 py-3 bg-white">
