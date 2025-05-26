@@ -17,7 +17,7 @@ export const AppContextProvider = ({ children }) => {
 
     const navigate = useNavigate();
     const [user, setUser] = useState(null)
-    const [isSeller, setIsSeller] = useState(true)  //So somehow logging in must change this from false to true... 
+    const [isSeller, setIsSeller] = useState(false)  //So somehow logging in must change this from false to true... 
     const [showUserLogin, setShowUserLogin] = useState(false)
     const [products, setProducts] = useState([])
 
