@@ -36,7 +36,6 @@ export const AppContextProvider = ({ children }) => {
             }
         } catch (error) {
                 setIsSeller(false)
-            
         }
     }
 
@@ -101,6 +100,8 @@ export const AppContextProvider = ({ children }) => {
 
 
     useEffect(() => {
+        // checks if seller is logged in, hopefully stays logged in
+        fetchSeller();
         fetchProducts(); 
     },[])
 
