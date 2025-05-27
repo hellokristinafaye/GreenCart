@@ -32,7 +32,10 @@ export const addProduct = async (req, res) => {
             ...newProduct,
             name: req.body.name,
             description: req.body.description,
-            
+            price: req.body.price,
+            offerPrice: req.body.offerPrice,
+            image: req.body.image,
+            category: req.body.category
         })
 
         res.json({ success: true, message: "Product Added!" });
