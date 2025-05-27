@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { assets, categories } from '../../assets/assets';
 import { useAppContext } from '../../context/AppContext';
+import toast from 'react-hot-toast';
 
 const AddProduct = () => {
     // state variables
@@ -30,8 +31,20 @@ const AddProduct = () => {
             for (let i = 0; i < files.length; i++) {
                 formData.append('images', files[i])
             }
-
-        
+            // api call
+            const { data } = await axios.post('/api/product/add', formData)
+            
+            if (data.success) {
+                toast.success(data.message)
+                setName('');
+                setDescription('');
+                setCategory('');
+                setPrice('');
+                setOfferPrice('');
+                setFiles([])
+            } else {
+                
+            }
 
         } catch (error) {
             
