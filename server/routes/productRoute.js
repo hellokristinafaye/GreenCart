@@ -11,7 +11,7 @@ productRouter.post('/add',
     authSeller,
     addProduct);
 productRouter.get('/list', productList);
-productRouter.get('/list', productById);
+productRouter.get('/id', productById);
 productRouter.post('/stock', authSeller, changeStock);
 
 export default productRouter;
