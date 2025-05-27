@@ -11,16 +11,14 @@ export const addProduct = async (req, res) => {
     try {
     // gets product info in the form of a JSON from the request body
 //         let productData = JSON.parse(req.body.productData);
-//         // console.log(req.body);
-//         console.log("spot 1")
+//        
 // // takes images in the form of files
 //         const images = req.files;
-//         console.log("spot 2")
 
 //         let imagesUrl = await Promise.all(
 //             images.map(async (image) => {
 //                 // gets the URL of the newly uploaded image, saved as "result"
-//                 let result = await cloudinary.uploader.upload(images.path, { resource_type: 'image' })
+//                 let result = await cloudinary.uploader.upload(item.path, { resource_type: 'image' })
 //                 // the url is made secure by this method.
 //                 return result.secure_url
 //             })
