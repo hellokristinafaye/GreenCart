@@ -24,7 +24,7 @@ export const AppContextProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState({})
     const [searchQuery, setSearchQuery] = useState({})
 
-    // Fetch Seller Status
+    // Fetch Seller Status - allows seller to refresh page and stay logged in.
     const fetchSeller = async () => {
         try {
             // api call
