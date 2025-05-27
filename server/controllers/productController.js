@@ -27,8 +27,13 @@ export const addProduct = async (req, res) => {
 //         )
 //     // creates product data in the database
         //         await Product.create({...productData, image: imagesUrl})
-        let newProduct 
-        await Product.create({ newProduct , name: req.body.name})
+        let newProduct = {};
+        await Product.create({
+            ...newProduct,
+            name: req.body.name,
+            description: req.body.description,
+            
+        })
 
         res.json({ success: true, message: "Product Added!" });
         // OK the above code WORKS to upload stuff. We made the model not require anything just yet, and it'll get the names from the stuff... BUT we don't have cloudinary in here anywhere... At least it'll upload tho! 
