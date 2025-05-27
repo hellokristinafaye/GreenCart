@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { assets, categories } from '../../assets/assets';
+import { useAppContext } from '../../context/AppContext';
 
 const AddProduct = () => {
     // state variables
@@ -9,6 +10,8 @@ const AddProduct = () => {
     const [category, setCategory] = useState([]);
     const [price, setPrice] = useState([]);
     const [offerPrice, setOfferPrice] = useState([]);
+
+    const { axios } = useAppContext();
 
     const onSubmitHandler = async (event) => {
         try {
@@ -27,6 +30,8 @@ const AddProduct = () => {
             for (let i = 0; i < files.length; i++) {
                 formData.append('images', files[i])
             }
+
+        
 
         } catch (error) {
             
