@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// we gotta add "required: true" back to all of these except inStock
 const productSchema = new mongoose.Schema({
     name: { type: String},
     description: { type: Array},

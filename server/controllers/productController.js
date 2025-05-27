@@ -59,8 +59,6 @@ export const productList = async (req, res) => {
 } 
 
 // Get Single Product : /api/product/id
-// tested, but doesn't quite work b/c I think we don't have those ids. even w/ a dummy object
-// still doesn't work after a BUNCH of trials...
 export const productById = async (req, res) => {
     try {
         const { id } = req.body
@@ -72,7 +70,7 @@ export const productById = async (req, res) => {
     }
 } 
 
-// Change Product inStork : /api/product/stock
+// Change Product inStock : /api/product/stock
 // tested, works, but didn't send data.
 export const changeStock = async (req, res) => {
     try {
