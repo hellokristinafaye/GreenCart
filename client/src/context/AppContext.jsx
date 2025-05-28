@@ -135,6 +135,7 @@ export const AppContextProvider = ({ children }) => {
         fetchProducts(); 
         // checks if user is authenticated/logged in
         fetchUser();
+        
         console.log("Hello")
     }, [])
     
@@ -152,7 +153,10 @@ export const AppContextProvider = ({ children }) => {
                 
             }
         }
-    },[cartItems])
+        if (user) {
+            updateCart();
+        }
+    },[cartItems, user])
 
     const value = {
         navigate, user, setUser, setIsSeller, isSeller, showUserLogin, setShowUserLogin, products, currency, addToCart, updateCartItems, removeFromCart, cartItems, searchQuery, setSearchQuery, getCartAmount, getCartCount, axios, fetchProducts
