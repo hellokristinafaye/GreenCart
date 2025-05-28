@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { dummyProducts } from "../assets/assets";
+// import { dummyProducts } from "../assets/assets";
 import toast from "react-hot-toast";
 import axios from "axios";
 
@@ -46,8 +46,9 @@ export const AppContextProvider = ({ children }) => {
 
         try {
             // api call
-            const { data } = await axios.get('/api/products/list');
+            const { data } = await axios.get('/api/product/list');
             if (data.success) {
+                console.log(data.products);
                 setProducts(data.products)
             } else {
                 toast.error(data.message);
@@ -116,7 +117,9 @@ export const AppContextProvider = ({ children }) => {
     useEffect(() => {
         // checks if seller is logged in, hopefully stays logged in
         fetchSeller();
+        // gets products from database and displays them on Product List page
         fetchProducts(); 
+        console.log("Hello")
     },[])
 
     const value = {
