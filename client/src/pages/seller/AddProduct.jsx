@@ -26,13 +26,14 @@ const AddProduct = () => {
                 offerPrice
             }
             
-
+        // Note Start: I think this is only necessary if we're using Cloudinary, which we haven't quite gotten yet. 5/27/25 5:30 pm. That's perhaps a future version. 
             // const formData = new FormData();
             // formData.append('productData', JSON.stringify(productData));
-
+            
             // for (let i = 0; i < files.length; i++) {
-            //     formData.append('images', files[i])
-            // }
+                //     formData.append('images', files[i])
+                // }
+        // Note end ^ 
             
             // api call
             const { data } = await axios.post('/api/product/add', productData)
