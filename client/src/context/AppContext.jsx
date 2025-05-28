@@ -156,7 +156,7 @@ export const AppContextProvider = ({ children }) => {
         if (user) {
             updateCart();
         }
-    },[cartItems, user])
+    },[cartItems])
 
     const value = {
         navigate, user, setUser, setIsSeller, isSeller, showUserLogin, setShowUserLogin, products, currency, addToCart, updateCartItems, removeFromCart, cartItems, searchQuery, setSearchQuery, getCartAmount, getCartCount, axios, fetchProducts
