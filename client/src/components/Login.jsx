@@ -11,12 +11,19 @@ const Login = () => {
     const [password, setPassword] = React.useState("");
 
     const onSubmitHandler = async (event) => {
-        event.preventDefault();
-        setUser({
-            email: "dash@dog.com",
-            name: "Dash"
-        })
-        setShowUserLogin(false);
+        // placeholder code
+        // setUser({
+            //     email: "dash@dog.com",
+            //     name: "Dash"
+            // })
+            
+        try {
+                event.preventDefault();
+                setShowUserLogin(false);
+                
+        } catch (error) {
+            
+        }
     }
 
   return (
