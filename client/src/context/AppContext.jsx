@@ -136,7 +136,20 @@ export const AppContextProvider = ({ children }) => {
         // checks if user is authenticated/logged in
         fetchUser();
         console.log("Hello")
-    },[])
+    }, [])
+    
+    // Update Database Cart Items
+    useEffect(() => {
+        const updateCart = async () => {
+            try {
+                // api call
+                const { data } = await axios.post('/api/cart/update', { cartItems });
+                
+            } catch (error) {
+                
+            }
+        }
+    },[cartItems])
 
     const value = {
         navigate, user, setUser, setIsSeller, isSeller, showUserLogin, setShowUserLogin, products, currency, addToCart, updateCartItems, removeFromCart, cartItems, searchQuery, setSearchQuery, getCartAmount, getCartCount, axios, fetchProducts
