@@ -39,6 +39,9 @@ export const AppContextProvider = ({ children }) => {
         }
     }
 
+    // Fetch User Auth Status, User Data and Cart Items
+     const fetchUser = 
+
     // Fetch All Products
     const fetchProducts = async () => {
         // placeholder code - dummyProducts
