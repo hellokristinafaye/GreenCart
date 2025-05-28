@@ -3,7 +3,7 @@ import { useAppContext } from '../context/AppContext';
 
 const Login = () => {
 
-    const { setShowUserLogin, setUser, axios } = useAppContext()
+    const { setShowUserLogin, setUser, axios, navigate } = useAppContext()
 
     const [state, setState] = React.useState("login");
     const [name, setName] = React.useState("");
@@ -25,7 +25,11 @@ const Login = () => {
                 name, email, password
             });
 
-            
+            if (data.success) {
+                navigate('/')
+            } else {
+
+            }
 
                 setShowUserLogin(false);
                 
