@@ -5,9 +5,16 @@ import { useAppContext } from '../context/AppContext'
 
 const Navbar = () => {
     const [open, setOpen] = React.useState(false)
-    const { user, setUser, setShowUserLogin, navigate, setSearchQuery, searchQuery, getCartCount } = useAppContext();
+    const { user, setUser, setShowUserLogin, navigate, setSearchQuery, searchQuery, getCartCount, axios } = useAppContext();
 // for Logout
     const logout = async () => {
+        try {
+            //  api call
+            const {data} = await axios
+        } catch (error) {
+            
+        }
+
         setUser(null);
         navigate('/');
     }
